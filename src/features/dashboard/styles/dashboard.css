@@ -1,0 +1,114 @@
+.dashboard-layout {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.dashboard-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    border-bottom: 1px solid var(--bg-card);
+}
+
+.dashboard-logo {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.nav-links-container {
+    display: flex;
+    gap: 8px;
+    background-color: var(--bg-card);
+    padding: 6px;
+    border-radius: var(--radius-pill);
+}
+
+.nav-link {
+    text-decoration: none;
+    color: var(--text-secondary);
+    font-weight: 400;
+    padding: 8px 16px;
+    border-radius: var(--radius-pill);
+    transition: all 0.2s ease;
+}
+
+.nav-link:hover {
+    color: var(--text-primary);
+}
+
+.nav-link.active {
+    color: var(--text-primary);
+    font-weight: 600;
+    background-color: var(--bg-input);
+}
+
+.logout-btn {
+    background-color: var(--bg-input);
+    color: var(--text-primary);
+}
+
+.dashboard-main {
+    padding: 40px;
+    flex: 1;
+    max-width: 1400px;
+    margin: 0 auto;`
+    width: 100%;
+}
+
+.dashboard-header {
+    margin-bottom: 24px;
+    font-size: 28px;
+}
+
+.bento-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+}
+
+.bento-card-green {
+    background-color: var(--accent-green);
+    color: #000;
+}
+
+.bento-card-pink {
+    background-color: var(--accent-pink);
+    color: #000;
+}
+
+.bento-title {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 16px;
+}
+
+.bento-title-secondary {
+    font-size: 16px;
+    color: var(--text-secondary);
+    margin-bottom: 16px;
+}
+
+.bento-value {
+    font-size: 36px;
+    font-weight: 700;
+}
+
+.bento-desc {
+    font-size: 14px;
+    margin-top: 8px;
+    opacity: 0.8;
+}
+
+.task-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.task-item {
+    padding: 12px;
+    background-color: var(--bg-input);
+    border-radius: 12px;
+}
