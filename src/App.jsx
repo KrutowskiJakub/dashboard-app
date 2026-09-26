@@ -3,9 +3,9 @@ import { LoginPage } from './features/auth/pages/LoginPage';
 import { ProtectedRoute } from './features/auth/components/ProtectedRoute';
 import { DashboardLayout } from './features/dashboard/components/DashboardLayout';
 import { DashboardPage } from './features/dashboard/pages/DashboardPage';
+import { FinancePage } from './features/dashboard/pages/FinancePage';
 
 // Tymczasowe komponenty dla nowych modułów
-const FinancePage = () => <div><h2>Wydatki i finanse</h2><p>Tabela w budowie...</p></div>;
 const HobbyPage = () => <div><h2>Tracker Hobby</h2><p>Statystyki w budowie...</p></div>;
 
 function App() {

@@ -53,7 +53,7 @@
     padding: 40px;
     flex: 1;
     max-width: 1400px;
-    margin: 0 auto;`
+    margin: 0 auto;
     width: 100%;
 }
 
@@ -111,4 +111,247 @@
     padding: 12px;
     background-color: var(--bg-input);
     border-radius: 12px;
+}
+
+/* --- WŁASNA LISTA KATEGORII --- */
+.custom-select-container {
+    position: relative;
+    width: 100%;
+}
+.custom-select-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+.custom-select-list {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: var(--bg-card);
+    border: 1px solid var(--bg-input);
+    border-radius: var(--radius-sm);
+    margin-top: 8px;
+    z-index: 50;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+.custom-select-item {
+    padding: 12px 16px;
+    cursor: pointer;
+    color: var(--text-primary);
+    transition: background-color 0.2s;
+}
+.custom-select-item:hover {
+    background-color: var(--bg-input);
+}
+
+/* --- CUSTOM KALENDARZ (REACT DATEPICKER) --- */
+.react-datepicker-wrapper {
+    width: 100%;
+}
+.react-datepicker {
+    background-color: var(--bg-card) !important;
+    border: 1px solid var(--bg-input) !important;
+    border-radius: var(--radius-sm) !important;
+    font-family: 'Inter', sans-serif !important;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+.react-datepicker__header {
+    background-color: var(--bg-card) !important;
+    border-bottom: 1px solid var(--bg-input) !important;
+    padding-top: 12px !important;
+}
+.react-datepicker__current-month,
+.react-datepicker__day-name {
+    color: var(--text-primary) !important;
+}
+.react-datepicker__day {
+    color: var(--text-secondary) !important;
+    border-radius: var(--radius-sm) !important;
+}
+.react-datepicker__day:hover {
+    background-color: var(--bg-input) !important;
+    color: var(--text-primary) !important;
+}
+/* Zaznaczony dzień używa naszego różowego akcentu */
+.react-datepicker__day--selected,
+.react-datepicker__day--keyboard-selected {
+    background-color: var(--accent-pink) !important;
+    color: #000 !important;
+    font-weight: 600;
+}
+
+/* --- POPRAWKI WYGLĄDU WYBIERAKA MIESIĘCY --- */
+
+/* Jasny kolor czcionki dla miesięcy, pasujący do strzałek */
+.react-datepicker__month-text,
+.react-datepicker__year-text {
+    color: var(--text-primary) !important;
+}
+
+.react-datepicker__month-text:hover,
+.react-datepicker__year-text:hover {
+    background-color: var(--bg-input) !important;
+}
+
+/* Zastąpienie niebieskiego zaznaczenia szarym motywem */
+.react-datepicker__month-text--selected,
+.react-datepicker__month-text--keyboard-selected,
+.react-datepicker__year-text--selected,
+.react-datepicker__year-text--keyboard-selected {
+    background-color: var(--text-secondary) !important;
+    color: #000 !important;
+    font-weight: 600;
+}
+
+/* Ukrycie mrugającego kursora w polu input */
+.react-datepicker__input-container input {
+    caret-color: transparent;
+    cursor: pointer;
+}
+
+/* Wymuszenie jasnego koloru dla nagłówka roku w kalendarzu */
+.react-datepicker-year-header {
+    color: var(--text-primary) !important;
+}
+
+/* --- KLASY BAZOWE DLA MODUŁU FINANSÓW --- */
+.finance-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    gap: 16px;
+}
+
+.finance-tabs {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.action-row {
+    display: flex;
+    gap: 8px;
+}
+
+/* --- RWD / WERSJA MOBILNA (Ekrany do 768px) --- */
+/* --- RWD / WERSJA MOBILNA DLA DASHBOARDU (Ekrany do 768px) --- */
+/* Standardowa szerokość kalendarza dla komputerów */
+.month-picker-container {
+    width: 150px;
+}
+
+/* --- RWD / WERSJA MOBILNA DLA DASHBOARDU (Ekrany do 768px) --- */
+@media (max-width: 768px) {
+    /* Kompaktowa nawigacja (Grid: Logo z lewej, Wyloguj z prawej, linki pod spodem) */
+    .dashboard-nav {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        align-items: center;
+        padding: 16px;
+        gap: 16px;
+    }
+
+    .dashboard-logo {
+        margin: 0;
+        text-align: left;
+        width: auto;
+    }
+
+    .logout-btn {
+        margin: 0;
+        padding: 8px 16px;
+        width: auto;
+    }
+
+    /* Linki stają się poziomym, przewijanym palcem paskiem */
+    .nav-links-container {
+        grid-column: 1 / -1;
+        flex-direction: row;
+        overflow-x: auto;
+        justify-content: flex-start;
+        background-color: transparent;
+        padding: 0;
+        gap: 12px;
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+    }
+    .nav-links-container::-webkit-scrollbar {
+        display: none; /* Ukrycie paska przewijania w Chrome/Safari */
+    }
+
+    .nav-link {
+        white-space: nowrap;
+        width: auto;
+        padding: 10px 18px;
+        background-color: var(--bg-card);
+    }
+
+    /* Główne tło i odstępy */
+    .dashboard-main {
+        padding: 16px;
+    }
+
+    /* Nagłówek finansów i kalendarz (obok siebie, nie w pionie) */
+    .finance-header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .dashboard-header {
+        font-size: 20px;
+        text-align: left;
+        margin: 0;
+        width: auto;
+    }
+
+    .month-picker-container {
+        width: auto;
+        min-width: 160px; /* Zapewnia miejsce na długie nazwy miesięcy jak październik */
+    }
+
+    /* Przyciski zakładek na pół (Widok 1 i Widok 2 obok siebie) */
+    .finance-tabs {
+        flex-direction: row;
+    }
+    .finance-tabs button {
+        flex: 1;
+        padding: 10px;
+        font-size: 13px; /* Mniejsza czcionka, by zmieściły się obok siebie */
+    }
+
+    /* Formularze (inputy i przyciski akcji zostają w pionie, by wygodnie w nie klikać) */
+    .action-row {
+        flex-direction: column;
+    }
+    .action-row button,
+    .action-row input {
+        width: 100%;
+    }
+
+    /* Kompresja tabeli finansów na małych ekranach */
+    table {
+        min-width: 100% !important; /* Zdejmuje sztywne 600px */
+        font-size: 12px; /* Zmniejsza tekst, by weszło 5 kolumn */
+    }
+
+    th, td {
+        padding: 12px 4px !important; /* Zmniejsza poziome odstępy między słowami */
+    }
+
+    /* Wymusza ułożenie przycisków Edytuj i Usuń w pionie */
+    td:last-child > div {
+        flex-direction: column;
+        gap: 6px !important;
+    }
+
+    td:last-child button {
+        padding: 6px !important;
+        font-size: 11px !important;
+        width: 100%;
+    }
 }
